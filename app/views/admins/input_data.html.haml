@@ -1,0 +1,8 @@
+.apilink
+  = link_to "input_data", input_data_path
+.apiresult
+  %pre
+    -if @result.present?
+      = @result.to_yaml
+    -else
+      %p input_dataを実行して下さい

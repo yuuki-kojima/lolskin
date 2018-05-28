@@ -1,0 +1,141 @@
+#wrapper{
+  height: 100vh;
+  position:relative;
+  #left-menu{
+    float:left;
+    background-color:#222;
+    width:400px;
+    height:100vh;
+    text-align: center;
+    h1{
+      font-size: 70px;
+      color: white;
+      a{
+        text-decoration: none;
+        &:visited{
+          color: white;
+        }
+      }
+    }
+    input#search-field{
+      margin-bottom: 20px;
+      width: 290px;
+      border-radius: 5px;
+      padding-left: 10px;
+    }
+    #search-result{
+      background-color: #eee;
+      width: 300px;
+      max-height: calc(100vh - 200px);
+      margin: 0 auto;
+      border-radius: 5px;
+      overflow:auto;
+      .information{
+        margin: 10px;
+        text-align: left;
+      }
+      li{
+        height: 70px;
+        position: relative;
+        &:hover{
+          opacity: 0.7 ;
+        }
+        img{
+          float: left;
+          width: 50px;
+          line-height: 70px;
+          position: absolute;
+          left:10px;
+          top: 10px;
+          border-radius: 5px;
+        }
+        a{
+          text-decoration: none;
+          color: #000;
+        }
+        p{
+          text-align: left;
+          line-height: 70px;
+          padding-left: 70px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  #main{
+    float:right;
+    width:calc(100% - 400px);
+    height:100vh;
+    background-color:#111;
+    display: block;
+    background: url("lol_background.jpg") no-repeat center center;
+    background-size:cover;
+    // opacity: .2;
+    overflow:auto;
+    &::before{
+      background-color: rgba(0,0,0,0.7);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 400px;
+      content: ' ';
+    }
+    .lists{
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .list{
+        position: relative;
+        width:200px;
+        margin:0 15px 5px 0;
+        &__meta{
+          box-sizing: border-box;
+          background-color: rgba( 9, 17, 32, 0.55 );
+          height: 75px;
+          width: 100%;
+          position: absolute;
+          bottom: 5px;
+          padding: 10px;
+          &__name{
+            color: white;
+            line-height:20px;
+          }
+          &__type{
+            color: #59c;
+          }
+        }
+        &__image{
+          img{
+            width:100%;
+          }
+        }
+      }
+    }
+    #layer{
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      height: 80vh;
+      width: 80vw;
+      background-color: black;
+      #popup{
+        display: none;
+        img{
+          height: 80vh;
+          width: 80vw;
+        }
+      }
+      .close-icon-position{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+        color: white;
+      }
+    }
+  }
+}
