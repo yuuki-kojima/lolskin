@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
 
-  API_KEY = 'RGAPI-4aaa0d35-284a-4802-be30-a53eb7249d8a'
+  API_KEY = 'RGAPI-7371873a-524c-4116-8453-652c31f2f776'
 
   def index
   end
