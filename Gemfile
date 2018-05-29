@@ -60,4 +60,5 @@ gem 'ruby-lol'
 gem 'json'
 gem 'mechanize'
 gem 'font-awesome-rails'
+gem 'seed_dump'
 
