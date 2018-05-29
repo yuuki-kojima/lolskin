@@ -21,7 +21,7 @@ class AdminsController < ApplicationController
       skins.each do |skin|
         new_skin = new_champion.skins.find_by(name: skin["name"])
         if new_skin.nil?
-          new_skin = new_champion.new
+          new_skin = new_champion.skins.new
           new_skin[:skin_num] = skin["num"]
           new_skin[:skin_id] = skin["id"]
           new_skin.save
