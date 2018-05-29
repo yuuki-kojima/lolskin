@@ -1,0 +1,10 @@
+%li.list
+  = link_to("/champions/#{@champion.name}/#{skin.name}") do
+    .list__meta
+      %p.list__meta__name
+        - if skin.name == "default"
+          = @champion.name
+        - else
+          = skin.name
+    .list__image
+      %img{ alt: skin.name , src: "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/#{@champion.key}_#{skin.skin_num}.jpg" }/

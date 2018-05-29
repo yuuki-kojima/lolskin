@@ -7,6 +7,17 @@ class ChampionsController < ApplicationController
     end
   end
 
+  def show_skins
+    @champion = Champion.find_by(name: params[:name])
+    @skins = @champion.skins
+  end
+
+  def show_skin
+    @champion = Champion.find_by(name: params[:name])
+    @skins = @champion.skins
+    @skin = Skin.find_by(name: params[:skin_name])
+  end
+
   def search
     @champion = Champion.find(params[:id])
     @skins = @champion.skins

@@ -19,10 +19,17 @@ class AdminsController < ApplicationController
       new_champion.save
       skins = champion[1]["skins"]
       skins.each do |skin|
-        new_skin = new_champion.skins.where(name: skin["name"]).first_or_initialize
-        new_skin[:skin_num] = skin["num"]
-        new_skin[:skin_id] = skin["id"]
-        new_skin.save
+        new_skin = new_champion.skins.find_by(name: skin["name"])
+        if new_skin.nil? do
+          new_skin = new_champion.new
+          new_skin[:skin_num] = skin["num"]
+          new_skin[:skin_id] = skin["id"]
+          new_skin.save
+        end
+        # new_skin = new_champion.skins.where(name: skin["name"]).first_or_initialize
+        # new_skin[:skin_num] = skin["num"]
+        # new_skin[:skin_id] = skin["id"]
+        # new_skin.save
       end
     end
   end

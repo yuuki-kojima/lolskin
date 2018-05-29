@@ -1,3 +1,37 @@
+@mixin lists {
+  .lists{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .list{
+      position: relative;
+      width:200px;
+      margin:0 15px 5px 0;
+      &__meta{
+        box-sizing: border-box;
+        background-color: rgba( 9, 17, 32, 0.55 );
+        height: 75px;
+        width: 100%;
+        position: absolute;
+        bottom: 5px;
+        padding: 10px;
+        &__name{
+          color: white;
+          line-height:20px;
+        }
+        &__type{
+          color: #59c;
+        }
+      }
+      &__image{
+        img{
+          width:100%;
+        }
+      }
+    }
+  }
+}
+
 #wrapper{
   height: 100vh;
   position:relative;
@@ -70,7 +104,6 @@
     display: block;
     background: url("lol_background.jpg") no-repeat center center;
     background-size:cover;
-    // opacity: .2;
     overflow:auto;
     &::before{
       background-color: rgba(0,0,0,0.7);
@@ -81,38 +114,31 @@
       left: 400px;
       content: ' ';
     }
-    .lists{
+    .show-skins{
+      position: relative;
       padding: 20px;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      .list{
-        position: relative;
-        width:200px;
-        margin:0 15px 5px 0;
-        &__meta{
-          box-sizing: border-box;
-          background-color: rgba( 9, 17, 32, 0.55 );
-          height: 75px;
-          width: 100%;
-          position: absolute;
-          bottom: 5px;
-          padding: 10px;
-          &__name{
-            color: white;
-            line-height:20px;
-          }
-          &__type{
-            color: #59c;
-          }
-        }
-        &__image{
-          img{
-            width:100%;
-          }
-        }
+      @include lists;
+      h2{
+        color: white;
+        font-size: 30px;
       }
     }
+    .show-skin{
+      position: relative;
+      padding: 20px;
+      h2,h3{
+        color: white;
+        font-size: 30px;
+      }
+      .skin-splash{
+        text-align: center;
+        img{
+          width: 100%;;
+        }
+      }
+      @include lists;
+    }
+
     #layer{
       display: none;
       position: absolute;

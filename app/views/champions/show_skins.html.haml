@@ -1,0 +1,8 @@
+#wrapper
+  = render 'leftmenu'
+  #main
+    .show-skins
+      %h2
+        #{@champion.name} Skins
+      %ul.lists
+        = render partial: "skin", collection: @skins

@@ -5,8 +5,8 @@ $(document).on('turbolinks:load', function() {
     var url_end = ".png"
     var image_url = url_init + champion.key + url_end
     var html = `<li>
-                  <img src="${image_url}" alt="${champion.name}">
-                  <a href="/${champion.name}" data-champion-id="${champion.id}">
+                  <a href="/champions/${champion.name}" data-champion-id="${champion.id}">
+                    <img src="${image_url}" alt="${champion.name}">
                     <p>${champion.name}</p>
                   </a>
                 </li>`
@@ -64,46 +64,46 @@ $(document).on('turbolinks:load', function() {
     }
   });
 
-  $(document).on("click", "#search-result li", function(e){
-    e.preventDefault();
-    var champion_id = $('a', this).data('championId');
+  // $(document).on("click", "#search-result li", function(e){
+  //   e.preventDefault();
+  //   var champion_id = $('a', this).data('championId');
 
-    $.ajax({
-      type: 'GET',
-      url: '/search',
-      data: {id: champion_id},
-      dataType:'json'
-    })
-    .done(function(data) {
-      $("#main .lists").empty();
-      if(data.lenght !== 0){
-        data.forEach(function(skin) {
-          var html = buildskinHTML(skin);
-          $(html).appendTo('#main .lists');
-        });
-      }
-    })
-    .fail(function(data) {
-      alert('スキン検索に失敗しました');
-    });
-  });
+  //   $.ajax({
+  //     type: 'GET',
+  //     url: '/search',
+  //     data: {id: champion_id},
+  //     dataType:'json'
+  //   })
+  //   .done(function(data) {
+  //     $("#main .lists").empty();
+  //     if(data.lenght !== 0){
+  //       data.forEach(function(skin) {
+  //         var html = buildskinHTML(skin);
+  //         $(html).appendTo('#main .lists');
+  //       });
+  //     }
+  //   })
+  //   .fail(function(data) {
+  //     alert('スキン検索に失敗しました');
+  //   });
+  // });
 
   // show popupボタンクリック時の処理
-  $(document).on("click", ".list",function(){
-      $('#popup, #layer').show();
-      $("#popup").empty();
-      var url_init = "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/"
-      var url_end = ".jpg"
-      var champion_key = $('.list__meta', this).data('championKey');
-      var skin_num = $('.list__meta', this).data('skinNum');
-      var url = url_init + champion_key + "_" + skin_num + url_end
-      $('#popup').append($("<img>").attr({"src":url}));
-      $('#popup').append($("<i>").attr({"class":"fa fa-window-close close-icon-position"}));
-  });
+  // $(document).on("click", ".list",function(){
+  //     $('#popup, #layer').show();
+  //     $("#popup").empty();
+  //     var url_init = "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/"
+  //     var url_end = ".jpg"
+  //     var champion_key = $('.list__meta', this).data('championKey');
+  //     var skin_num = $('.list__meta', this).data('skinNum');
+  //     var url = url_init + champion_key + "_" + skin_num + url_end
+  //     $('#popup').append($("<img>").attr({"src":url}));
+  //     $('#popup').append($("<i>").attr({"class":"fa fa-window-close close-icon-position"}));
+  // });
 
   // レイヤー/ポップアップのcloseボタンクリック時の処理
-  $('#close, #layer, i').click(function(e) {
-      $('#popup, #layer').hide();
-  });
+  // $('#close, #layer, i').click(function(e) {
+  //     $('#popup, #layer').hide();
+  // });
 
 });
