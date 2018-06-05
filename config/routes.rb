@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount_roboto
+  # mount_roboto
   root 'champions#index'
   get 'search'     => 'champions#search'
   get 'admin'      => 'admins#index'
