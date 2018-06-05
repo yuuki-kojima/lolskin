@@ -1,5 +1,5 @@
 %li.list
-  = link_to("/champions/#{@champion.name}/#{skin.name}") do
+  = link_to("/champions/#{@champion.key}/#{skin.name}") do
     .list__meta
       %p.list__meta__name
         - if skin.name == "default"

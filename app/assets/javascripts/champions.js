@@ -1,11 +1,11 @@
 $(document).on('turbolinks:load', function() {
   function buildHTML(champion){
 
-    var url_init = "http://ddragon.leagueoflegends.com/cdn/8.10.1/img/champion/"
+    var url_init = "https://ddragon.leagueoflegends.com/cdn/8.10.1/img/champion/"
     var url_end = ".png"
     var image_url = url_init + champion.key + url_end
     var html = `<li>
-                  <a href="/champions/${champion.name}" data-champion-id="${champion.id}">
+                  <a href="/champions/${champion.key}" data-champion-id="${champion.id}">
                     <img src="${image_url}" alt="${champion.name}">
                     <p>${champion.name}</p>
                   </a>

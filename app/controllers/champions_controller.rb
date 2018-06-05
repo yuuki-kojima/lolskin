@@ -8,12 +8,12 @@ class ChampionsController < ApplicationController
   end
 
   def show_skins
-    @champion = Champion.find_by(name: params[:name])
+    @champion = Champion.find_by(key: params[:key])
     @skins = @champion.skins
   end
 
   def show_skin
-    @champion = Champion.find_by(name: params[:name])
+    @champion = Champion.find_by(key: params[:key])
     @skins = @champion.skins
     @skin = Skin.find_by(name: params[:skin_name])
   end

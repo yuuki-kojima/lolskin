@@ -62,3 +62,6 @@ gem 'mechanize'
 gem 'font-awesome-rails'
 gem 'seed_dump'
 gem 'google-analytics-rails'
+gem "sitemap_generator"
+gem 'whenever', require: false
+gem 'roboto'
