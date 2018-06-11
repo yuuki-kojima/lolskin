@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function() {
   function buildHTML(champion){
 
-    var url_init = "https://ddragon.leagueoflegends.com/cdn/8.10.1/img/champion/"
+    var url_init = "https://ddragon.leagueoflegends.com/cdn/8.11.1/img/champion/"
     var url_end = ".png"
     var image_url = url_init + champion.key + url_end
     var html = `<li>
