@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get 'input_data' => 'admins#input_data'
   get 'champions'  => 'champions#index'
   get 'champions/:key'  => 'champions#show_skins'
-  get 'champions/:key/:skin_name'  => 'champions#show_skin'
+  get 'champions/:key/:skin_name'  => 'champions#show_skin', :skin_name => /.*/
 end
